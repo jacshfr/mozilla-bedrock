@@ -27,6 +27,11 @@ main {
     }
 }
 
+h2 a {
+    color: #fff;
+    text-shadow: none;
+}
+
 .button-blue-flat() {
     padding: 0 (@gridGutterWidth / 2);
     background: @whatsnewBlue;
@@ -83,6 +88,16 @@ html[lang|="en"] {
     button[type="submit"] {
         text-transform: uppercase;
     }
+}
+
+input[type="email"]:-moz-ui-invalid:not(output) {
+    border-color: #D1D2D3;
+    box-shadow: none;
+}
+
+.send-another {
+    display: block;
+    margin-top: @baseLine;
 }
 
 .toggle {
@@ -211,7 +226,7 @@ html[lang|="en"] {
 
     .field-email {
         background-image: url(/media/img/firefox/whatsnew-fx37/lock.png);
-        background-position: right center;
+        background-position: right 16px;
         background-repeat: no-repeat;
     }
 
@@ -228,11 +243,6 @@ html[lang|="en"] {
     input[type="email"] {
         width: 89%;
     }
-
-    &.thank p > a {
-        display: block;
-        margin-top: @baseLine;
-    }
 }
 
 #footer-email-errors {
@@ -246,7 +256,7 @@ html[lang|="en"] {
         float: left;
         width: 390px;
         background-image: url(/media/img/firefox/whatsnew-fx37/lock.png);
-        background-position: right center;
+        background-position: right 16px;
         background-repeat: no-repeat;
     }
 
@@ -258,12 +268,50 @@ html[lang|="en"] {
         .open-sans;
         float: right;
     }
+
+    p {
+        margin: @baseLine 0;
+    }
+}
+
+.sms-form-wrapper {
+    position: relative;
+    .clearfix();
+
+    &.loading {
+        h3, form {
+            .transition(opacity .2s ease-in-out);
+            opacity: 0.2;
+        }
+    }
+}
+
+#sms-spinner {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#sms-form-thank-you {
+    display: none;
+    overflow: hidden;
+    h3 {
+        width: auto;
+        float: none;
+        .animation(sand-bounce-down 0.7s ease-in 0.2s 1 normal both);
+    }
+    p {
+        .animation(sand-fade-in 0.5s ease-in 0.8s 1 normal both);
+    }
 }
 
 .html-rtl {
     .newsletter-form {
         .field-email {
-            background-position: left center;
+            background-position: left 16px;
         }
         .form-submit {
             float: left;
@@ -272,7 +320,7 @@ html[lang|="en"] {
     #sms-form {
         .input {
             float: right;
-            background-position: left center;
+            background-position: left 16px;
         }
         button[type="submit"] {
             float: left;
@@ -363,7 +411,7 @@ html[lang|="en"] {
         .input {
             float: right;
             margin-bottom: @baseLine;
-            background-position: left center;
+            background-position: left 16px;
             text-align: right;
         }
     }
@@ -390,7 +438,7 @@ html[lang|="en"] {
 
             .input {
                 float: left;
-                background-position: right center;
+                background-position: right 16px;
                 text-align: left;
             }
         }
@@ -437,7 +485,7 @@ html[lang|="en"] {
         .input {
             width: 100%;
             text-align: left;
-            background-position: right center;
+            background-position: right 16px;
         }
 
         input[type="tel"] {
@@ -480,7 +528,7 @@ html[lang|="en"] {
 
             .input {
                 float: none;
-                background-position: left center;
+                background-position: left 16px;
                 text-align: right;
             }
 
