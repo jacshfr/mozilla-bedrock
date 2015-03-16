@@ -551,6 +551,12 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/firefox_os_new-bundle.css',
     },
+    'firefox_os_older': {
+        'source_filenames': (
+            'css/firefox/os/firefox-os-older.less',
+        ),
+        'output_filename': 'css/firefox_os_older-bundle.css',
+    },
     'firefox_os_ie': {
         'source_filenames': (
             'css/firefox/os/firefox-os-ie.less',
